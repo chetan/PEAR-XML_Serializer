@@ -26,7 +26,7 @@ Since version 0.8.0 the package is able to treat XML documents similar to the si
   </maintainer>
   </maintainers>
  <release>
-  <version>0.20.0</version>
+  <version>0.20.1</version>
   <date>2009-06-11</date>
   <license>BSD License</license>
   <state>beta</state>
@@ -570,6 +570,14 @@ XML_Unserializer:
     <license>BSD License</license>
     <state>beta</state>
     <notes>- Request #13564:  bool(false) is converted to empty string
+    </notes>
+   </release>
+   <release>
+    <version>0.20.1</version>
+    <date>2009-12-23</date>
+    <license>BSD License</license>
+    <state>beta</state>
+    <notes>Fixed minor deprecation issue in PHP 5.3: "Assigning the return value of new by reference is deprecated"
     </notes>
    </release>
  </changelog>

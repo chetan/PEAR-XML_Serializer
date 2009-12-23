@@ -256,8 +256,7 @@ define('XML_UNSERIALIZER_ERROR_NO_UNSERIALIZATION', 151);
  * <code>
  * require_once 'XML/Unserializer.php';
  *
- * //  be careful to always use the ampersand in front of the new operator
- * $unserializer = &new XML_Unserializer();
+ * $unserializer = new XML_Unserializer();
  *
  * $unserializer->unserialize($xml);
  *
@@ -798,10 +797,10 @@ class XML_Unserializer extends PEAR
             if ($this->options[XML_UNSERIALIZER_OPTION_TAG_AS_CLASSNAME] === true
                 && class_exists($classname)
             ) {
-                $value['value'] = &new $classname;
+                $value['value'] = new $classname;
             } else {
                 $value['value'] =
-                    &new $this->options[XML_UNSERIALIZER_OPTION_DEFAULT_CLASS];
+                    new $this->options[XML_UNSERIALIZER_OPTION_DEFAULT_CLASS];
             }
             if (trim($data) !== '') {
                 if ($value['guessType'] === true) {
@@ -971,7 +970,7 @@ class XML_Unserializer extends PEAR
             $this->_parser->free();
             unset($this->_parser);
         }
-        $this->_parser = &new XML_Parser($this->
+        $this->_parser = new XML_Parser($this->
             options[XML_UNSERIALIZER_OPTION_ENCODING_SOURCE],
             'event', $this->options[XML_UNSERIALIZER_OPTION_ENCODING_TARGET]);
 
